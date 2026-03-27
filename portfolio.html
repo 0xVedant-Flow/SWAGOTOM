@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | SWAGOTO M</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-gradient);
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+        }
+        
+        .portfolio-masonry {
+            columns: 3 300px;
+            column-gap: 20px;
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+        }
+        
+        .masonry-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+            transition: transform 0.4s;
+        }
+        
+        .masonry-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .category-header {
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-masonry { columns: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-glow"></div>
+
+    <div class="loader-wrapper" style="background: var(--bg-darker);">
+        <div class="loader-logo"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="scrolled">
+        <a href="index.html" class="logo magnetic">SWAGOTO M</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="index.html#contact" class="btn btn-primary magnetic" style="padding: 10px 25px;">Get Started</a>
+        </div>
+    </nav>
+
+    <header class="category-header reveal">
+        <h1>Creative Showreel</h1>
+        <p>A curated selection of our most viral projects.</p>
+    </header>
+
+    <section class="portfolio-section" style="padding-top: 0;">
+        <div class="filter-buttons reveal">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="ai">AI Product Images</button>
+            <button class="filter-btn" data-filter="ugc">UGC Videos</button>
+            <button class="filter-btn" data-filter="social">Social Media</button>
+        </div>
+
+        <div class="portfolio-masonry reveal" id="portfolio-grid">
+            <!-- Fresh Cosmetic & Bathroom Setups -->
+            <div class="masonry-item item-ai reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/bathroom_cosmetic_ai_1_1774589611091.png" alt="Bathroom Cosmetic">
+                    <div class="portfolio-overlay">
+                        <h4>Pure Face Wash</h4>
+                        <p>Marble & Water Drop Tech</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item item-ai reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/serum_dropper_ai_1_1774589626131.png" alt="Serum Dropper">
+                    <div class="portfolio-overlay">
+                        <h4>Tile Hydration</h4>
+                        <p>Modern Airy Photography</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Organic Nature Collection -->
+            <div class="masonry-item item-ai reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/nature_perfume_ai_1774589101079.png" alt="Nature Perfume">
+                    <div class="portfolio-overlay">
+                        <h4>Forest Mist</h4>
+                        <p>Organic Outdoor Photography</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item item-ai reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/organic_skincare_ai_1774589115555.png" alt="Organic Skincare">
+                    <div class="portfolio-overlay">
+                        <h4>Zen Skincare</h4>
+                        <p>Natural Sunlight & Greenery</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item item-social reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/nature_watch_ai_v2_1774589132248.png" alt="Nature Watch">
+                    <div class="portfolio-overlay">
+                        <h4>Heritage Watch</h4>
+                        <p>Outdoor Lifestyle Shoot</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item item-ai reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/organic_beverage_ai_1774589151680.png" alt="Organic Beverage">
+                    <div class="portfolio-overlay">
+                        <h4>Pure Garden</h4>
+                        <p>Fresh & Organic Visuals</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Existing User Uploads -->
+            <div class="masonry-item item-ugc reveal">
+                <div class="portfolio-item glass" style="aspect-ratio: 9/16;">
+                    <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                        <source src="assets/video/0327.mp4" type="video/mp4">
+                    </video>
+                    <div class="portfolio-overlay">
+                        <h4>Authentic Campaign</h4>
+                        <p>User Generated Content</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item item-ugc reveal">
+                <div class="portfolio-item glass" style="aspect-ratio: 9/16;">
+                    <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                        <source src="assets/video/0327(1).mp4" type="video/mp4">
+                    </video>
+                    <div class="portfolio-overlay">
+                        <h4>Product Showcase</h4>
+                        <p>UGC Viral Reel</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Uploaded High-End Shots -->
+            <div class="masonry-item item-ai reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/High-end_product_shot_202603271017.png" alt="High End Shot">
+                    <div class="portfolio-overlay">
+                        <h4>Premium Bottle Visual</h4>
+                        <p>High-End AI Photography</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item item-social reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/Rustic_lifestyle_photography_202603271020.jpeg" alt="Rustic Lifestyle">
+                    <div class="portfolio-overlay">
+                        <h4>Rustic Collection</h4>
+                        <p>Lifestyle Brand Design</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item item-ai reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/0000008780719.webp" alt="Creative AI">
+                    <div class="portfolio-overlay">
+                        <h4>Abstract Concept</h4>
+                        <p>Creative AI Strategy</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pre-existing Items -->
+            <div class="masonry-item item-ai reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/car_futuristic_ai_1774586187609.png" alt="Futuristic Car">
+                    <div class="portfolio-overlay">
+                        <h4>Mach-Zeroconcept</h4>
+                        <p>Automotive AI Render</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item item-ai reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/perfume_luxury_ai_1774586169007.png" alt="Perfume AI">
+                    <div class="portfolio-overlay">
+                        <h4>Golden Essence</h4>
+                        <p>Luxury Perfume Visuals</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item item-social reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/fashion_model_ai_1774586205331.png" alt="Fashion AI">
+                    <div class="portfolio-overlay">
+                        <h4>Vanguard Fashion</h4>
+                        <p>AI Streetwear Shoot</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item item-ai reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/futuristic_sneaker_ai_1774575773709.png" alt="Sneaker AI">
+                    <div class="portfolio-overlay">
+                        <h4>Cyber Sneaker</h4>
+                        <p>AI Conceptual Art</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item item-ai reveal">
+                <div class="portfolio-item glass">
+                    <img src="assets/img/gadget_ai_1774586221711.png" alt="Gadget AI">
+                    <div class="portfolio-overlay">
+                        <h4>Holo-Tablet</h4>
+                        <p>Next-Gen Tech Renders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Portfolio Views (Lightbox) -->
+    <div id="portfolio-modal" class="loader-wrapper" style="display: none; background: rgba(0,0,0,0.9); opacity: 1;">
+        <div class="glass" style="max-width: 90%; max-height: 90%; position: relative; padding: 10px;">
+            <span id="close-modal" style="position: absolute; top: -40px; right: 0; font-size: 2rem; cursor: pointer;">&times;</span>
+            <img id="modal-img" src="" style="max-width: 100%; max-height: 80vh; border-radius: 10px;">
+            <div id="modal-desc" style="padding: 20px; text-align: center;"></div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <section id="contact" style="text-align: center;">
+        <div class="glass reveal" style="padding: 80px 40px; border-radius: 40px; border: 1px solid var(--neon-purple); overflow: hidden; position: relative;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Scale Your Brand?</h2>
+            <a href="mailto:hello@swagotom.pro" class="btn btn-primary magnetic">Book Your Free Creative Session</a>
+        </div>
+    </section>
+
+    <footer>
+        <a href="index.html" class="logo magnetic">SWAGOTO M</a>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://www.linkedin.com/in/0xvedantflow/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p style="color: var(--text-dim);">&copy; 2026 SWAGOTO M. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Portfolio specific filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.masonry-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                items.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(`item-${filter}`)) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.style.opacity = '1', 50);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => item.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('portfolio-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalDesc = document.getElementById('modal-desc');
+        const closeModal = document.getElementById('close-modal');
+
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                const title = item.querySelector('h4').innerText;
+                const p = item.querySelector('p').innerText;
+
+                modalImg.src = imgSrc;
+                modalDesc.innerHTML = `<h3>${title}</h3><p>${p}</p>`;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
