@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     loader.style.display = 'none';
                     document.body.style.overflow = 'auto';
                     startHeroAnimations();
-                }, 500);
+                }, 300);
             }
-        }, 1500); 
+        }, 300); 
     });
 
     // 2. Advanced Custom Cursor with Trailing
